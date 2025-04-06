@@ -2,6 +2,7 @@ import sqlite3
 import os
 import numpy as np
 import gc
+import sys
 
 
 def decode(lst):
@@ -66,3 +67,9 @@ def merge_table(db_path: str, critical_col: str):
     #
     connect_origin.close()
     connect_new.close()
+
+
+if __name__ == "__main__":
+    db_path = sys.argv[1]
+    critical_col = sys.argv[2]
+    merge_table(db_path, critical_col)
