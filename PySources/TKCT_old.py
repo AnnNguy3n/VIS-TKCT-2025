@@ -37,7 +37,7 @@ def filter(DB_PATH, NAM_ID, target, num_field, level, FOLDER_SAVE, critical_col)
     connect = sqlite3.connect(DB_PATH)
     cursor = connect.cursor()
 
-    cursor.execute(f"SELECT count(*) FROM TT{NAM_ID}")
+    cursor.execute(f"SELECT count(*) FROM T{NAM_ID}")
     num_rows = cursor.fetchall()[0][0]
     print(num_rows)
     list_ct = []
