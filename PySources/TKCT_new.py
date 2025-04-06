@@ -349,6 +349,9 @@ def filter(vis: BASE, DB_PATH, NAM_ID, target, rate, FOLDER_SAVE, critical_col, 
             temp = cursor.fetchone()
             ct = temp[1]
             info = get_info_invest(vis, ct)
+            if info is None:
+                pbar.update(1)
+                continue
             check = True
             for k in range(len(list_save)):
                 if compare(list_save[k], info) >= threshold:
